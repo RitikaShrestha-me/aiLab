@@ -9,8 +9,8 @@
 # Initial values of Aplha and Beta 
 MAX, MIN = 1000, -1000
 nodeIndex = 0
-Depth = 3         # to be defined as per the problem
 Children = 2    # to be defined as per the problem
+Depth = 3         # to be defined as per the problem
 
 # Returns optimal value for current player  (Initially called for root and maximizer) 
 
@@ -46,15 +46,6 @@ if __name__ == "__main__":
     #values = [2,7,6,8] #depth 2, child 2
     print(values)
     print("The optimal value is :", minimax(0, nodeIndex, True, values)) 
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 

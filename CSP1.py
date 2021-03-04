@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[25]:
-
-
 def backtrack(x,enemy_list,domain,assigned):
     if -1 not in assigned:
         return x
@@ -12,7 +6,6 @@ def backtrack(x,enemy_list,domain,assigned):
         if v>len(domain[i]) and assigned[i]!=1:
             v = i
     order=[]
-    #print(v)
     for i in domain[v]:                     
         mini = 1000
         for j in enemy_list[v]:        # Check for the constraints , if the same table has the enemy
@@ -49,8 +42,6 @@ def backtrack(x,enemy_list,domain,assigned):
     return 0
 
 
-
-
 people = int(input("Enter the number of people"))
 tables = int(input("enter the number of tables"))
 edges = []
@@ -60,7 +51,6 @@ while(line):
      edges.append((int(line[0]),int(line[1])))
      line = input().split()
     
-#edges = [(0,1),(0,4),(0,5),(1,2),(1,3),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5),(4,5)]
 
 x = ["" for i in range(people)] #the final answer
 
@@ -71,11 +61,11 @@ for i in edges:                           # The loop creates the list of list, e
     enemy_list[i[0]].append(i[1])         # i is pointing to edges list
     enemy_list[i[1]].append(i[0])
 
-#print(enemy_list)
-
 for i in range(people):
     j = list(set(enemy_list[i]))        # Connect the enemy list identified in the above loop, wuth the person i
     enemy_list[i] = j
+
+print(enemy_list)
 assigned = [-1 for i in range(people)]    #Initialize the table assigned to each person as -1
 domain = [[x for x in range(tables)] for i in range(people)]  # Initialize with all the domain for all the person
 
@@ -86,32 +76,3 @@ if res == 0:
 else:
     for i in range(len(res)):
         print(' {} :'.format(i),res[i])
-
-
-# In[ ]:
-
-
-#Output 
-'''Enter the number of people8
-enter the number of tables3
-enter elements of list L(people who should not sit together) till an empty newline character. 0 2
-0 3
-0 4
-1 4
-1 7
-2 3
-2 6
-3 7
-3 4
-4 7
-5 6
-
- 0 : 0
- 1 : 1
- 2 : 2
- 3 : 1
- 4 : 2
- 5 : 1
- 6 : 0
- 7 : 0
-'''

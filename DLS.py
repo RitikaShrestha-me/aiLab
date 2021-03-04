@@ -44,7 +44,7 @@ g.addEdge(2, 6)
 g.addEdge(3,7)
 g.addEdge(3,8)
   
-target = 0; maxDepth = 3; src = 0
+target = 8; maxDepth = 3; src = 0
   
 print(g.printGraph())
 if g.DLS(src,target,maxDepth) == True:

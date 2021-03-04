@@ -3,7 +3,6 @@
 
 # In[1]:
 
-
 class MP_Neuron:
 
     # firing threshold for the neuron
@@ -18,16 +17,6 @@ class MP_Neuron:
     possible_thresh_vals = [-2, -1, 0, 1, 2]
 
     def __init__(self, input_matrix):
-
-        '''
-        Example input matrix for AND gate
-        |   x1  |   x2  |   y   |
-        |   -1  |   -1  |   0   |
-        |   -1  |   +1  |   0   |
-        |   +1  |   -1  |   0   |
-        |   +1  |   +1  |   1   |
-        '''   
-
         self.input_matrix = input_matrix
 
     
@@ -109,7 +98,7 @@ if __name__=="__main__":
 
     def neuron_calculate(mp):
         if mp.iterate_all_values():
-            print("Weights are : {}, {}".format(mp.w1, mp.w2))
+            print(f"Weights are : {mp.w1}, {mp.w2}")
             print("Threshold is {}".format(mp.threshold))
         else:
             print("Not linearly separable.")
